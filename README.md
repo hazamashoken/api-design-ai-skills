@@ -42,13 +42,13 @@ Supporting references:
 To install this repository with compatible Agent Skills tooling:
 
 ```bash
-npx skills add hazamashoken/AI-skills
+npx skills add hazamashoken/api-design-ai-skills
 ```
 
 To inspect the repository before installing:
 
 ```bash
-npx skills add hazamashoken/AI-skills -l
+npx skills add hazamashoken/api-design-ai-skills -l
 ```
 
 For tools that support plugin marketplaces, this repo also includes:
