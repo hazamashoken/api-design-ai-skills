@@ -1,0 +1,16 @@
+{
+  "name": "AI-skills",
+  "version": "1.0.0",
+  "description": "A collection of reusable agent skills, starting with an API design skill for REST, GraphQL, WebSocket, and OpenAPI workflows.",
+  "owner": {
+    "name": "hazamashoken"
+  },
+  "plugins": [
+    {
+      "name": "api-design",
+      "source": "./skills/api-design",
+      "description": "Design and review REST, GraphQL, WebSocket, and OpenAPI API contracts with guidance on errors, auth, versioning, pagination, and operational semantics.",
+      "category": "development"
+    }
+  ]
+}

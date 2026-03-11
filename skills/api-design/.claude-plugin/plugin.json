@@ -1,0 +1,11 @@
+{
+  "name": "api-design",
+  "version": "1.0.0",
+  "description": "Design and review REST, GraphQL, WebSocket, and OpenAPI API contracts with practical guidance on versioning, errors, pagination, auth, and operational behavior.",
+  "author": {
+    "name": "hazamashoken",
+    "url": "https://github.com/hazamashoken"
+  },
+  "repository": "https://github.com/hazamashoken/AI-skills",
+  "license": "UNLICENSED"
+}

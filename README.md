@@ -1,14 +1,88 @@
 # AI Skills
 
-Agent skill repository for reusable Codex and Agent Skills workflows.
+A collection of reusable agent skills for coding agents.
 
-This repo is structured so each skill lives under `skills/` and can be discovered, reviewed, and installed as a self-contained package.
+This repository currently focuses on API design and review workflows. The skills follow the [Agent Skills](https://agentskills.io/) format and are organized so they can be discovered, installed, and used by compatible tooling.
+
+## Available Skills
+
+### `api-design`
+
+Design and review API contracts across:
+
+- RESTful HTTP
+- GraphQL
+- WebSocket
+- OpenAPI-first workflows
+
+Use it when you need help with:
+
+- choosing the right API style
+- designing routes, operations, schemas, and message envelopes
+- authentication and authorization boundaries
+- structured errors and status handling
+- versioning and backward compatibility
+- pagination, filtering, and async workflows
+- API RFCs and review checklists
+
+Main entry point:
+
+- [`skills/api-design/SKILL.md`](./skills/api-design/SKILL.md)
+
+Supporting references:
+
+- [`skills/api-design/references/rest.md`](./skills/api-design/references/rest.md)
+- [`skills/api-design/references/graphql.md`](./skills/api-design/references/graphql.md)
+- [`skills/api-design/references/websocket.md`](./skills/api-design/references/websocket.md)
+- [`skills/api-design/references/openapi.md`](./skills/api-design/references/openapi.md)
+- [`skills/api-design/references/versioning.md`](./skills/api-design/references/versioning.md)
+
+## Installation
+
+To install this repository with compatible Agent Skills tooling:
+
+```bash
+npx skills add hazamashoken/AI-skills
+```
+
+To inspect the repository before installing:
+
+```bash
+npx skills add hazamashoken/AI-skills -l
+```
+
+For tools that support plugin marketplaces, this repo also includes:
+
+- [`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json)
+- [`skills/api-design/.claude-plugin/plugin.json`](./skills/api-design/.claude-plugin/plugin.json)
+
+## Usage
+
+Once installed, the `api-design` skill should activate when the task involves API design or API review.
+
+Example prompts:
+
+```text
+Design a REST API for order checkout with idempotency and async payment processing.
+```
+
+```text
+Review this GraphQL schema for backwards-compatibility and error-handling problems.
+```
+
+```text
+Compare REST and WebSocket for a collaborative presence feature.
+```
 
 ## Repository Structure
 
 ```text
+.claude-plugin/
+  marketplace.json
 skills/
   api-design/
+    .claude-plugin/
+      plugin.json
     SKILL.md
     references/
     assets/
@@ -22,48 +96,7 @@ Each skill folder contains:
 - `assets/`: reusable templates and supporting files
 - `agents/`: product-specific metadata such as `openai.yaml`
 
-## Available Skills
-
-### `api-design`
-
-Design and review API contracts across:
-
-- RESTful HTTP
-- GraphQL
-- WebSocket
-- OpenAPI-first workflows
-
-The skill includes guidance for:
-
-- contract design and review
-- authentication and authorization boundaries
-- structured error design
-- versioning and backward compatibility
-- pagination, filtering, and async workflows
-- RFC and review templates
-
-Skill path:
-
-- [`skills/api-design/`](./skills/api-design/)
-
-Key files:
-
-- [`skills/api-design/SKILL.md`](./skills/api-design/SKILL.md)
-- [`skills/api-design/references/rest.md`](./skills/api-design/references/rest.md)
-- [`skills/api-design/references/graphql.md`](./skills/api-design/references/graphql.md)
-- [`skills/api-design/references/websocket.md`](./skills/api-design/references/websocket.md)
-- [`skills/api-design/references/openapi.md`](./skills/api-design/references/openapi.md)
-- [`skills/api-design/references/versioning.md`](./skills/api-design/references/versioning.md)
-
-## Using A Skill
-
-If your agent tooling supports skill repositories, point it at this repo and select a skill from `skills/`.
-
-For local Codex-style usage, the installable unit is the individual skill folder, for example:
-
-- `skills/api-design/`
-
 ## Notes
 
-- This repository currently contains one skill and is structured to support more.
+- This repository is structured to support additional skills over time.
 - Relative paths inside each skill resolve from that skill's own directory.
