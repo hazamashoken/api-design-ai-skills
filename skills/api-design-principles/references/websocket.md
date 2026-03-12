@@ -125,6 +125,9 @@ Use `UPPER_SNAKE_CASE` for stable error codes in message payloads, and keep the 
 - Re-check permissions for room joins, subscriptions, and commands that affect state.
 - Avoid assuming that an authenticated socket is allowed to do everything.
 - Define tenancy and scope boundaries clearly.
+- Scope groups, subscriptions, or equivalent fan-out channels to the active tenant, organization,
+  workspace, or other isolation boundary.
+- Re-validate sensitive tenant or scope context on connect and on privileged commands when needed.
 
 ## Plan Evolution
 

@@ -1,0 +1,11 @@
+{
+  "name": "api-design-principles",
+  "version": "1.0.0",
+  "description": "Framework-agnostic API design doctrine for contract design, transport selection, versioning, pagination, error semantics, auth boundaries, and review work.",
+  "author": {
+    "name": "hazamashoken",
+    "url": "https://github.com/hazamashoken"
+  },
+  "repository": "https://github.com/hazamashoken/AI-skills",
+  "license": "UNLICENSED"
+}

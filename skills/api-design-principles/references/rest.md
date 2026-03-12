@@ -125,10 +125,17 @@ For validation-heavy endpoints, a typical `details` shape is:
 }
 ```
 
+If an existing API already uses a simpler framework-default error shape and clients depend on it,
+preserve that shape unless the task explicitly includes a migration to a custom envelope. A custom
+error object is best treated as a recommended pattern for new or intentionally redesigned public APIs,
+not as a universal retrofit requirement.
+
 ## Support Lists Well
 
 - Use filtering, sorting, and pagination consistently across list endpoints.
-- Prefer cursor pagination for frequently changing datasets.
+- Prefer cursor pagination for frequently changing datasets when the project is prepared to support it.
+- Preserve established page-number pagination when it is already part of the contract and there is
+  no explicit decision to migrate.
 - Use limit and cursor parameters with explicit defaults and max bounds.
 - Define sort keys and ordering deterministically.
 
@@ -160,13 +167,19 @@ State clearly:
 - Enforce authorization on the server for every request. Do not rely on client-side checks for protection.
 - Avoid leaking existence through inconsistent `403` and `404` behavior.
 - Document tenancy boundaries explicitly.
+- Confirm that list and detail queries cannot leak data across tenants, organizations, or equivalent
+  isolation boundaries.
 
 ## Plan Evolution
 
 - Prefer additive changes: new fields, new endpoints, new enum values with backward-compatible handling.
 - Treat field removal, meaning changes, and required new inputs as breaking.
-- For externally consumed REST APIs, default to explicit versioning from the start and state the mechanism clearly, such as path, header, or media type versioning.
-- Path versioning such as `/api/v1/users` is usually the simplest default when clients, gateways, or docs benefit from obvious version boundaries.
+- For new externally consumed REST APIs, explicit versioning may be a good default; state the
+  mechanism clearly, such as path, header, or media type versioning.
+- For existing unversioned APIs, lack of versioning is not automatically a defect. Treat version
+  introduction as a compatibility-sensitive change that needs an explicit migration plan.
+- Path versioning such as `/api/v1/users` is often the simplest choice when clients, gateways,
+  or docs benefit from obvious version boundaries.
 - Publish deprecation timelines for breaking changes.
 
 ## Review Checklist

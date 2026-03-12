@@ -1,4 +1,0 @@
-interface:
-  display_name: "API Design"
-  short_description: "Design and review REST, GraphQL, WebSocket, and OpenAPI contracts"
-  default_prompt: "Use $api-design to design or review a production-ready REST, GraphQL, WebSocket, or OpenAPI API contract."

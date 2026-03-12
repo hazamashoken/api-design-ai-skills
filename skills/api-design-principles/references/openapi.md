@@ -22,6 +22,10 @@ Before writing the spec, define:
 
 Then express those decisions in OpenAPI instead of designing directly inside the YAML.
 
+If the API already exists, describe the contract that clients actually use before proposing a cleaner
+replacement. OpenAPI should document the current canonical behavior unless the task is explicitly to
+redesign and migrate it.
+
 ## Prefer A Stable Spec Structure
 
 Keep the document organized around:
@@ -84,6 +88,9 @@ Useful shared patterns:
 
 Keep the shared error schema centered on `code`, `status`, and `message`. Keep error codes stable, machine-readable, and in `UPPER_SNAKE_CASE`. Add optional fields such as `request_id` and `details` only when they are intentionally part of the contract.
 
+If an existing API already relies on framework-default error payloads, model that faithfully in the
+spec rather than silently imposing a new shared envelope.
+
 ## Model Security Explicitly
 
 - Define security schemes centrally.
@@ -97,6 +104,7 @@ Keep the shared error schema centered on `code`, `status`, and `message`. Keep e
 - Keep schema reuse intentional and understandable.
 - Prefer additive schema changes.
 - Be careful with `oneOf`, `anyOf`, and `allOf`; use them only when the contract semantics are clear.
+- Preserve established path structure and parameter conventions unless the migration plan is part of the task.
 
 ## Design Examples Into The Spec
 

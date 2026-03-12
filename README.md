@@ -6,9 +6,9 @@ This repository currently focuses on API design and review workflows. The skills
 
 ## Available Skills
 
-### `api-design`
+### `api-design-principles`
 
-Design and review API contracts across:
+Framework-agnostic API design doctrine for:
 
 - RESTful HTTP
 - GraphQL
@@ -27,15 +27,42 @@ Use it when you need help with:
 
 Main entry point:
 
-- [`skills/api-design/SKILL.md`](./skills/api-design/SKILL.md)
+- [`skills/api-design-principles/SKILL.md`](./skills/api-design-principles/SKILL.md)
 
 Supporting references:
 
-- [`skills/api-design/references/rest.md`](./skills/api-design/references/rest.md)
-- [`skills/api-design/references/graphql.md`](./skills/api-design/references/graphql.md)
-- [`skills/api-design/references/websocket.md`](./skills/api-design/references/websocket.md)
-- [`skills/api-design/references/openapi.md`](./skills/api-design/references/openapi.md)
-- [`skills/api-design/references/versioning.md`](./skills/api-design/references/versioning.md)
+- [`skills/api-design-principles/references/rest.md`](./skills/api-design-principles/references/rest.md)
+- [`skills/api-design-principles/references/graphql.md`](./skills/api-design-principles/references/graphql.md)
+- [`skills/api-design-principles/references/websocket.md`](./skills/api-design-principles/references/websocket.md)
+- [`skills/api-design-principles/references/openapi.md`](./skills/api-design-principles/references/openapi.md)
+- [`skills/api-design-principles/references/versioning.md`](./skills/api-design-principles/references/versioning.md)
+
+### `api-design-drf`
+
+Django REST Framework adapter for implementing the chosen API contract with:
+
+- serializers
+- views and viewsets
+- permissions
+- pagination, filtering, and ordering
+- versioning
+- drf-spectacular
+- contract-focused API tests
+
+Main entry point:
+
+- [`skills/api-design-drf/SKILL.md`](./skills/api-design-drf/SKILL.md)
+
+Supporting references:
+
+- [`skills/api-design-drf/references/drf.md`](./skills/api-design-drf/references/drf.md)
+- [`skills/api-design-drf/references/view-selection.md`](./skills/api-design-drf/references/view-selection.md)
+- [`skills/api-design-drf/references/serializers.md`](./skills/api-design-drf/references/serializers.md)
+- [`skills/api-design-drf/references/permissions.md`](./skills/api-design-drf/references/permissions.md)
+- [`skills/api-design-drf/references/errors.md`](./skills/api-design-drf/references/errors.md)
+- [`skills/api-design-drf/references/queries.md`](./skills/api-design-drf/references/queries.md)
+- [`skills/api-design-drf/references/schema.md`](./skills/api-design-drf/references/schema.md)
+- [`skills/api-design-drf/references/testing.md`](./skills/api-design-drf/references/testing.md)
 
 ## Installation
 
@@ -58,7 +85,7 @@ For tools that support plugin marketplaces, this repo also includes:
 
 ## Usage
 
-Once installed, the `api-design` skill should activate when the task involves API design or API review.
+Once installed, these skills should activate when the task involves API contract design or DRF implementation details.
 
 Example prompts:
 
@@ -71,7 +98,7 @@ Review this GraphQL schema for backwards-compatibility and error-handling proble
 ```
 
 ```text
-Compare REST and WebSocket for a collaborative presence feature.
+Map this API contract into DRF serializers, permissions, and drf-spectacular schema output.
 ```
 
 ## Repository Structure
@@ -80,12 +107,18 @@ Compare REST and WebSocket for a collaborative presence feature.
 .claude-plugin/
   marketplace.json
 skills/
-  api-design/
+  api-design-principles/
     .claude-plugin/
       plugin.json
     SKILL.md
     references/
     assets/
+    agents/
+  api-design-drf/
+    .claude-plugin/
+      plugin.json
+    SKILL.md
+    references/
     agents/
 ```
 

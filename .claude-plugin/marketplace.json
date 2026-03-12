@@ -1,15 +1,21 @@
 {
   "name": "AI-skills",
   "version": "1.0.0",
-  "description": "A collection of reusable agent skills, starting with an API design skill for REST, GraphQL, WebSocket, and OpenAPI workflows.",
+  "description": "A collection of reusable API design skills, covering framework-agnostic API principles and Django REST Framework execution guidance.",
   "owner": {
     "name": "hazamashoken"
   },
   "plugins": [
     {
-      "name": "api-design",
-      "source": "./skills/api-design",
-      "description": "Design and review REST, GraphQL, WebSocket, and OpenAPI API contracts with guidance on errors, auth, versioning, pagination, and operational semantics.",
+      "name": "api-design-principles",
+      "source": "./skills/api-design-principles",
+      "description": "Framework-agnostic API design doctrine for transport selection, contract design, errors, auth boundaries, pagination, versioning, and review work.",
+      "category": "development"
+    },
+    {
+      "name": "api-design-drf",
+      "source": "./skills/api-design-drf",
+      "description": "Django REST Framework adapter for implementing API contracts with serializers, permissions, pagination, drf-spectacular, and stable error handling.",
       "category": "development"
     }
   ]

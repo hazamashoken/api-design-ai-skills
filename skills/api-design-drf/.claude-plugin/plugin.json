@@ -1,7 +1,7 @@
 {
-  "name": "api-design",
+  "name": "api-design-drf",
   "version": "1.0.0",
-  "description": "Design and review REST, GraphQL, WebSocket, and OpenAPI API contracts with practical guidance on versioning, errors, pagination, auth, and operational behavior.",
+  "description": "Django REST Framework adapter for implementing API contracts with serializers, permissions, pagination, drf-spectacular, and stable error handling.",
   "author": {
     "name": "hazamashoken",
     "url": "https://github.com/hazamashoken"

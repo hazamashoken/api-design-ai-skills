@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Design DRF"
+  short_description: "Django REST Framework adapter for API implementation details"
+  default_prompt: "Use $api-design-drf after the API contract is chosen to map it cleanly into Django REST Framework serializers, permissions, schema, pagination, and tests."

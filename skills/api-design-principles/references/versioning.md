@@ -42,6 +42,10 @@ Use header or media-type versioning when:
 
 Use GraphQL deprecation rather than endpoint versioning in most cases.
 
+Do not treat explicit versioning as mandatory for every API. For internal or already-established
+unversioned APIs, preserving the current contract may be less risky than introducing version segments
+without a migration need.
+
 ## Separate Breaking From Non-Breaking Changes
 
 Document changes in these buckets:
@@ -62,6 +66,9 @@ For a breaking change:
 3. Communicate the timeline and migration steps.
 4. Measure client usage.
 5. Remove only after the agreed support window.
+
+If the current contract is intentionally preserved, say so explicitly. "No versioning change in this
+slice" is often the correct design decision.
 
 Good deprecation notices include:
 

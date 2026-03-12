@@ -4,7 +4,8 @@ This repository contains installable agent skills.
 
 ## Available Skills
 
-- `api-design`: `skills/api-design/`
+- `api-design-principles`: `skills/api-design-principles/`
+- `api-design-drf`: `skills/api-design-drf/`
 
 ## Conventions
 
